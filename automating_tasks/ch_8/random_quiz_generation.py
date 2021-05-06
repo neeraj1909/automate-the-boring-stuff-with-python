@@ -38,4 +38,14 @@ for quiz_num in range(35):
     # shuffle the order of the states.
     states = list(capitals.keys())
     random.shuffle(states)
+    
+    # Loop through all 50 states, making a question for each.
+    for question_num in range(50):
+        # get right and wrong answers.
+        correct_answer = capitals[states[question_num]]
+        wrong_answers = list(capitals.values())
+        del wrong_answers[wrong_answers.index(correct_answer)]
+        wrong_answers = random.sample(wrong_answers, 3)
+        answer_options = wrong_answers + [correct_answer]
+        random.shuffle(answer_options)
         
